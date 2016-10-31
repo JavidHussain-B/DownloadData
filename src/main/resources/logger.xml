@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration>
+
+	<appender name="fileAppender" class="org.apache.log4j.RollingFileAppender">
+		<param name="File" value="D:/Personal/Javid/GitHub/Code/DownloadDataWebApp/LogFile.log" />
+		<param name="MaxFileSize" value="5MB" />
+		<param name="MaxBackupIndex" value="50" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%-7p %d [%t] %c %x - %m%n" />
+		</layout>
+	</appender>
+
+	<appender name="htmlFileAppender" class="org.apache.log4j.RollingFileAppender">
+		<param name="File" value="D:/Personal/Javid/GitHub/Code/DownloadDataWebApp/LogFile.html" />
+		<param name="MaxFileSize" value="5MB" />
+		<param name="MaxBackupIndex" value="50" />
+		<layout class="org.apache.log4j.HTMLLayout">
+			<param name="ConversionPattern" value="%-7p %d [%t] %c %x - %m%n" />
+		</layout>
+
+	</appender>
+
+	<appender name="stdOut" class="org.apache.log4j.ConsoleAppender">
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%-7p %d [%t] %c %x - %m%n" />
+		</layout>
+	</appender>
+
+	<!-- package level log levels can be define -->
+	<category name="com.myapp">
+		<priority value="error" />
+	</category>
+
+
+	<!-- Root Logger trace/debug/info/warn/error/fatal/off> -->
+	<root>
+		<!--priority value="info" />
+		<appender-ref ref="fileAppender" />
+		<appender-ref ref="htmlFileAppender" /-->
+		<!-- remove stdOut to disable printing logs in server console -->
+		<appender-ref ref="stdOut" />
+		<appender-ref ref="fileAppender" />
+
+	</root>
+
+</log4j:configuration>
