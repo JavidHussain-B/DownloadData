@@ -14,6 +14,6 @@ Application provides two actions
 2. Submit -- To Download File with the data according to the entered SQL Query.
 
 
-Thanks for reading this.
+Thanks for reading out.
 
 Let me know if you see any issues. :) :)
