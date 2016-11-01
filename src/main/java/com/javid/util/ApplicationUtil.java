@@ -2,24 +2,27 @@ package com.javid.util;
 
 import java.io.PrintWriter;
 import java.io.StringWriter;
+
 /**
- * This class is utility class, which will provide some utility method to WBS Self Care app.
- * 
- * @author Javid Hussain
- *
+ * The Class ApplicationUtil.
  */
 public class ApplicationUtil {
 	
+	/** The Constant YES. */
 	public static final String YES = "YES";
 
+	/**
+	 * Instantiates a new application util.
+	 */
 	private ApplicationUtil() {
 		
 	}
 
 	/**
-	 * @author Javid Hussain
 	 * Gets the exception stack trace.
 	 *
+	 * @author Javid Hussain
+	 * Gets the exception stack trace.
 	 * @param exception the exception
 	 * @return the error stack trace
 	 */
@@ -30,9 +33,10 @@ public class ApplicationUtil {
 	}
 
 	/**
-	 * @author Javid Hussain
 	 * Gets the error stack trace.
 	 *
+	 * @author Javid Hussain
+	 * Gets the error stack trace.
 	 * @param error the error
 	 * @return the error stack trace
 	 */

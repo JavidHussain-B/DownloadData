@@ -9,6 +9,7 @@ public class RequestVO {
 	private String serviceName;
 	private String dbUserName;
 	private String dbPassword;
+	private String sqlQuery;
 
 	public String getHostName() {
 		return hostName;
@@ -64,6 +65,14 @@ public class RequestVO {
 
 	public void setDbType(String dbType) {
 		this.dbType = dbType;
+	}
+
+	public String getSqlQuery() {
+		return sqlQuery;
+	}
+
+	public void setSqlQuery(String sqlQuery) {
+		this.sqlQuery = sqlQuery;
 	}
 
 }

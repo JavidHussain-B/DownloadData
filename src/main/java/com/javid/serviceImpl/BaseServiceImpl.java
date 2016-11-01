@@ -44,4 +44,37 @@ public class BaseServiceImpl implements BaseService {
 		}
 		
 	}
+
+	/**
+	 * Download data.
+	 *
+	 * @param requestVO the request VO
+	 * @return the string buffer
+	 * @throws ApplicationServiceException the application service exception
+	 */
+	@Override
+	public StringBuffer downloadData(RequestVO requestVO) throws ApplicationServiceException {
+		StringBuffer data = null;
+		DBConnectionFactory factory = null;
+		try {
+			factory = DBConnectionFactoryProducer.getDBConnectionFactory(requestVO.getDbType(), requestVO.getHostName(), requestVO.getPort(), requestVO.getSid(), requestVO.getServiceName(),
+					requestVO.getDbUserName(), requestVO.getDbPassword());
+			factory.getConnection();
+			if(factory.getErrorMsg() != null) {
+				throw new ApplicationServiceException("ERROR-500",factory.getErrorMsg());
+			}
+			data = factory.getData(requestVO.getSqlQuery());
+			if(factory.getErrorMsg() != null) {
+				throw new ApplicationServiceException("ERROR-500",factory.getErrorMsg());
+			}
+		} catch(Exception e) {
+			logger.error("Error Occurred in BaseServiceImpl.downloadData" + ApplicationUtil.getExceptionStackTrace(e));
+			throw new ApplicationServiceException("ERROR-500",ApplicationUtil.getExceptionStackTraceFirstLine(e));
+		} finally {
+			if(factory != null) {
+				factory.closeConnection();
+			}
+		}
+		return data;
+	}
 }

@@ -20,6 +20,9 @@ public class ApplicationConstants {
 	
 	/** The Constant FAILURE. */
 	public static final String FAILURE = "ERROR";
+	
+	/** The Constant REC_FETCH_SIZE. */
+	public static final int REC_FETCH_SIZE = 500;
 
 	/** The Constant ERROR_CODES_RESOL. */
 	// Map to handle exceptions

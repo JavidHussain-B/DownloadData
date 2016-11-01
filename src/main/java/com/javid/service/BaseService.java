@@ -7,4 +7,7 @@ public interface BaseService {
 
 	void checkDatabaseConnection(RequestVO requestVO) throws ApplicationServiceException;
 
+	StringBuffer downloadData(RequestVO requestVO) throws ApplicationServiceException;
+
+
 }

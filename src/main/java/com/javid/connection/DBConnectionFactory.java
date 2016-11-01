@@ -12,4 +12,6 @@ public abstract class DBConnectionFactory {
 	
 	public abstract String getErrorMsg();
 
+	public abstract StringBuffer getData(String sqlQuery);
+
 }
