@@ -1,11 +1,5 @@
 app.controller('mainController', function($scope, $http) {
 	
-	$scope.hostName = '172.20.31.167';
-	$scope.port = 1521;
-	$scope.sid = 'LWBS41DV';
-	$scope.dbUserName = 'PM_CLIENTB_5_0';
-	$scope.dbPassword = 'PM_CLIENTB_5_0';
-	
 	$scope.getJSONData = function() {
 		var JSONData = {
 	            "dbType": $scope.hostType,
