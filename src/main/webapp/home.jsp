@@ -29,7 +29,9 @@
                      <span class="control-content">
                         <select ng-model="hostType" class="form-control" ng-focus="hostTypeLabel = true"  ng-blur="hostTypeLabel = false">
                            <option value="ORACLE">Oracle</option>
+                           <option value="MYSQL">MySql</option>
                         </select>
+                        <span class="errorMsg">{{paramvalue.PaymentDirection}}</span>
                      </span>
                   </div>
                </div>

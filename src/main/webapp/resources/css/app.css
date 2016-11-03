@@ -3,3 +3,4 @@
 .form-control { border-width: 0px 0px 1px 0px; box-shadow: inset 0 -1px 0px rgba(0,0,0,.075); 
 border-radius: 0px; position: relative; background: transparent; }
 .form-control:focus { box-shadow: inset 0 -1px 0px #9C27B0; border-color: #9C27B0; }
+.errorMsg { color: red; background-color: transparent; position: absolute; z-index: 1; }

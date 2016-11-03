@@ -2,6 +2,7 @@ package com.javid.util;
 
 import java.sql.Connection;
 import java.sql.Driver;
+import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -105,6 +106,20 @@ public class DBUtil {
 			logger.error("Got error while creating oracle connection." + ApplicationUtil.getExceptionStackTrace(e));
 		} catch (Exception e) {
 			logger.error("Got error while creating oracle connection." + ApplicationUtil.getExceptionStackTrace(e));
+		}
+		return conn;
+	}
+
+	public static Connection getMySqlConnection(String host, int port, String username, String password) {
+		Connection conn = null;
+		String URL = "jdbc:mysql://" + host + ":" + port ;
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+			conn = DriverManager.getConnection(URL, username,password);
+		} catch (SQLException e) {
+			logger.error("Got error while creating mysql connection." + ApplicationUtil.getExceptionStackTrace(e));
+		}catch (Exception e) {
+			logger.error("Got error while creating mysql connection." + ApplicationUtil.getExceptionStackTrace(e));
 		}
 		return conn;
 	}

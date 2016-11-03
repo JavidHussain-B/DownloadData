@@ -52,4 +52,12 @@ app.controller('mainController', function($scope, $http) {
         });
 	}
 	
+	$scope.checkValidations = function() {
+		if($scope.hostType == undefined) {
+			
+		} else {
+			
+		}
+	}
+	
 });

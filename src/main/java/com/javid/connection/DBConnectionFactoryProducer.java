@@ -24,6 +24,9 @@ public class DBConnectionFactoryProducer {
 			case "ORACLE" :
 				f = new OracleDBConnectionFactory(host,port,sid,dbUserName,dbPassword,service);
 				break;
+			case "MYSQL" :
+				f = new MySqlDBConnectionFactory(host, port, dbUserName, dbPassword);
+				break;
 		}
 		return f;
 	}
