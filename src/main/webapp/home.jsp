@@ -25,9 +25,9 @@
             <div class="row">
                <div class="col-sm-6 col-sm-6">
                   <div class="form-group">
-                     <label class="control-label">Host Type</label>
+                     <label class="control-label" ng-class="{'label_up' : hostTypeLabel, 'label_up_model' : hostType.length}">Select Host Type</label>
                      <span class="control-content">
-                        <select ng-model="hostType" class="form-control">
+                        <select ng-model="hostType" class="form-control" ng-focus="hostTypeLabel = true"  ng-blur="hostTypeLabel = false">
                            <option value="ORACLE">Oracle</option>
                         </select>
                      </span>
@@ -35,49 +35,49 @@
                </div>
                <div class="col-sm-6 col-sm-6">
                   <div class="form-group">
-                     <label class="control-label">Host Name</label>
+                     <label class="control-label" ng-class="{'label_up' : hostNameLabel, 'label_up_model' : hostName.length}">Enter Host Name</label>
                      <span class="control-content">
-                     <input type="text" ng-model="hostName" class="form-control" required placeholder="Enter Host Name"/>
+                     <input type="text" ng-model="hostName" class="form-control" required ng-focus="hostNameLabel = true"  ng-blur="hostNameLabel = false"/>
                      </span>
                   </div>
                </div>
                <div class="col-sm-6 col-sm-6">
                   <div class="form-group">
-                     <label class="control-label">Port</label>
+                     <label class="control-label" ng-class="{'label_up' : portLabel, 'label_up_model' : port.length}">Enter Port Number</label>
                      <span class="control-content">
-                     <input type="text" ng-model="port" class="form-control" required placeholder="Enter Port Number"/>
+                     <input type="text" ng-model="port" class="form-control" required ng-focus="portLabel = true"  ng-blur="portLabel = false"/>
                      </span>
                   </div>
                </div>
                <div class="col-sm-6 col-sm-6">
                   <div class="form-group">
-                     <label class="control-label">Sid</label>
+                     <label class="control-label" ng-class="{'label_up' : sidLabel, 'label_up_model' : sid.length}">Enter SID</label>
                      <span class="control-content">
-                     <input type="text" ng-model="sid" class="form-control" placeholder="Enter Sid"/>
+                     <input type="text" ng-model="sid" class="form-control" ng-focus="sidLabel = true"  ng-blur="sidLabel = false"/>
                      </span>
                   </div>
                </div>
                <div class="col-sm-6 col-sm-6">
                   <div class="form-group">
-                     <label class="control-label">Service Name</label>
+                     <label class="control-label" ng-class="{'label_up' : serviceNameLabel, 'label_up_model' : serviceName.length}">Enter Service Name</label>
                      <span class="control-content">
-                     <input type="text" ng-model="serviceName" class="form-control" placeholder="Enter Service Name"/>
+                     <input type="text" ng-model="serviceName" class="form-control" ng-focus="serviceNameLabel = true"  ng-blur="serviceNameLabel = false"/>
                      </span>
                   </div>
                </div>
                <div class="col-sm-6 col-sm-6">
                   <div class="form-group">
-                     <label class="control-label">DB User Name</label>
+                     <label class="control-label" ng-class="{'label_up' : dbUserNameLabel, 'label_up_model' : dbUserName.length}">Enter Database User Name</label>
                      <span class="control-content">
-                     <input type="text" ng-model="dbUserName" class="form-control" placeholder="Enter Database User Name"/>
+                     <input type="text" ng-model="dbUserName" class="form-control" ng-focus="dbUserNameLabel = true"  ng-blur="dbUserNameLabel = false"/>
                      </span>
                   </div>
                </div>
                <div class="col-sm-6 col-sm-6">
                   <div class="form-group">
-                     <label class="control-label">DB Password</label>
+                     <label class="control-label" ng-class="{'label_up' : dbPasswordLabel, 'label_up_model' : dbPassword.length}">Enter Database Password</label>
                      <span class="control-content">
-                     <input type="password" ng-model="dbPassword" class="form-control" placeholder="Enter Database Password"/>
+                     <input type="password" ng-model="dbPassword" class="form-control" ng-focus="dbPasswordLabel = true"  ng-blur="dbPasswordLabel = false"/>
                      </span>
                   </div>
                </div>
@@ -85,9 +85,9 @@
             <div class="row">
                <div class="col-sm-6 col-sm-6">
                   <div class="form-group">
-                     <label class="control-label">SQL Query</label>
+                     <label class="control-label" ng-class="{'label_up' : sqlQueryLabel, 'label_up_model' : sqlQuery.length}">Enter SQL Query</label>
                      <span class="control-content">
-                     <textarea ng-model="sqlQuery" class="form-control" placeholder="SELECT EMPLOYEE_ID,EMPLOYEE_NAME FROM EMPLOYEE"></textarea>
+                     <textarea ng-model="sqlQuery" class="form-control" ng-focus="sqlQueryLabel = true"  ng-blur="sqlQueryLabel = false"></textarea>
                      </span>
                   </div>
                </div>

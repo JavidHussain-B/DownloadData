@@ -1,6 +1,5 @@
-.control-label {
-    width: 40%;
-    line-height: 1.3;
-    padding-right: 7px;
-    color: #555;
-}
+.control-label { position: relative; bottom: -31px; font-weight: 500; transition: 0.4s; }
+.label_up, .label_up_model { bottom: 0px; color: #9C27B0; font-size: 13px; }
+.form-control { border-width: 0px 0px 1px 0px; box-shadow: inset 0 -1px 0px rgba(0,0,0,.075); 
+border-radius: 0px; position: relative; background: transparent; }
+.form-control:focus { box-shadow: inset 0 -1px 0px #9C27B0; border-color: #9C27B0; }
