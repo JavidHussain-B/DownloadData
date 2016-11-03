@@ -26,13 +26,11 @@ public class BaseServiceImpl implements BaseService {
 	public void checkDatabaseConnection(RequestVO requestVO) throws ApplicationServiceException {
 		DBConnectionFactory factory = null;
 		try {
-			if(requestVO.getDbType().equals("ORACLE")) {
-				factory = DBConnectionFactoryProducer.getDBConnectionFactory(requestVO.getDbType(), requestVO.getHostName(), requestVO.getPort(), requestVO.getSid(), requestVO.getServiceName(),
-						requestVO.getDbUserName(), requestVO.getDbPassword());
-				factory.getConnection();
-				if(factory.getErrorMsg() != null) {
-					throw new ApplicationServiceException("ERROR-500",factory.getErrorMsg());
-				}
+			factory = DBConnectionFactoryProducer.getDBConnectionFactory(requestVO.getDbType(), requestVO.getHostName(), requestVO.getPort(), requestVO.getSid(), requestVO.getServiceName(),
+					requestVO.getDbUserName(), requestVO.getDbPassword());
+			factory.getConnection();
+			if(factory.getErrorMsg() != null) {
+				throw new ApplicationServiceException("ERROR-500",factory.getErrorMsg());
 			}
 		} catch(Exception e) {
 			logger.error("Error Occurred in BaseServiceImpl.checkDatabaseConnection" + ApplicationUtil.getExceptionStackTrace(e));
