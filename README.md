@@ -3,7 +3,7 @@ To Download Data in to CSV file from a particular table.
 
 This Application is build in order to export table data into a CSV file.
 
-As of now This Application will support only for ORACLE Database.
+As of now This Application will support only for ORACLE & MySql Database.
 
 All you need to do is Enter your Database details like Host Name, Port, SID, Service Name, Database User Name, Database Password and write the sql query.
 

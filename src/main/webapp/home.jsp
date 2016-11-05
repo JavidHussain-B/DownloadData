@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html ng-app="downloadApp">
    <head>
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <!-- Bootstrap version 3.3.7 -->
@@ -15,18 +15,19 @@
       <script src="./resources/js/main.js"></script>
       <script src="./resources/controller/mainController.js"></script>
    </head>
-   <body ng-app="downloadApp">
-      <div ng-controller="mainController">
-         <div class="alert fade in" ng-class={{alertClass}}>
-            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-            {{alertMsg}}
+   <body ng-controller="mainController">
+      <div class="container">
+         <div class="alert" style="position: absolute;">
+            <a href="#" class="close">&times;</a>{{alertMsg}}
          </div>
-         <div class="container">
+         
+         <section>
             <div class="row">
                <div class="col-sm-6 col-sm-6">
                   <div class="form-group">
                      <label class="control-label" ng-class="{'label_up' : hostTypeLabel, 'label_up_model' : hostType.length}">Select Host Type</label>
                      <span class="control-content">
+                     	<div class="select-box-arrow"></div>
                         <select ng-model="hostType" class="form-control" ng-focus="hostTypeLabel = true"  ng-blur="hostTypeLabel = false">
                            <option value="ORACLE">Oracle</option>
                            <option value="MYSQL">MySql</option>
@@ -43,6 +44,9 @@
                      </span>
                   </div>
                </div>
+           </div>
+               
+           <div class="row">    
                <div class="col-sm-6 col-sm-6">
                   <div class="form-group">
                      <label class="control-label" ng-class="{'label_up' : portLabel, 'label_up_model' : port.length}">Enter Port Number</label>
@@ -59,6 +63,9 @@
                      </span>
                   </div>
                </div>
+           </div>    
+               
+           <div class="row">    
                <div class="col-sm-6 col-sm-6">
                   <div class="form-group">
                      <label class="control-label" ng-class="{'label_up' : serviceNameLabel, 'label_up_model' : serviceName.length}">Enter Service Name</label>
@@ -75,6 +82,9 @@
                      </span>
                   </div>
                </div>
+            </div>   
+               
+            <div class="row">   
                <div class="col-sm-6 col-sm-6">
                   <div class="form-group">
                      <label class="control-label" ng-class="{'label_up' : dbPasswordLabel, 'label_up_model' : dbPassword.length}">Enter Database Password</label>
@@ -84,6 +94,7 @@
                   </div>
                </div>
             </div>
+            
             <div class="row">
                <div class="col-sm-6 col-sm-6">
                   <div class="form-group">
@@ -94,9 +105,14 @@
                   </div>
                </div>
             </div>
-            <button type="submit" class="btn btn-default" ng-click="checkDatabaseConnection()">Test Connection</button>
-            <button type="submit" class="btn btn-default" ng-click="downloadData()">Submit</button>
-         </div>
+            
+            <div class="row">
+               <div class="col-sm-6 col-sm-6">
+            		<button type="submit" class="btn btn-info" ng-click="checkDatabaseConnection()">Test Connection</button>
+            		<button type="submit" class="btn btn-success" ng-click="downloadData()">Submit</button>
+               </div>
+            </div>
+         </section>
       </div>
    </body>
 </html>
