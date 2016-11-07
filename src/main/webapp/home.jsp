@@ -15,7 +15,7 @@
       <script src="./resources/js/main.js"></script>
       <script src="./resources/controller/mainController.js"></script>
    </head>
-   <body ng-controller="mainController">
+   <body ng-controller="mainController" style=" background: {{color}}">
       <div class="container">
          <div class="alert" style="position: absolute;">
             <a href="#" class="close">&times;</a>{{alertMsg}}

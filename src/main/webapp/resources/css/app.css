@@ -1,4 +1,4 @@
-body { background: #607D8B; }
+body { }
 section { background: #fff; padding: 20px; margin-top: 80px; }
 .control-label { position: relative; bottom: -31px; font-weight: 500; transition: 0.4s; }
 .label_up, .label_up_model { bottom: 0px; color: #9C27B0; font-size: 13px; }

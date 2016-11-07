@@ -1,4 +1,8 @@
-app.controller('mainController', function($scope, $http) {
+app.controller('mainController', function($scope, $http, $interval) {
+	
+	$interval(function() {
+		$scope.color = "#"+((1<<24)*Math.random()|0).toString(16);
+	}, 2000);
 	
 	$scope.getJSONData = function() {
 		var JSONData = {
